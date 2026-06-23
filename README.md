@@ -10,7 +10,7 @@ tüm sitelerde **birebir aynı ifadelerle** kanıtlamaktır.
 VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LİMİTED ŞİRKETİ   (çatı / ana şirket)
         │   MERSİS 0925126047100001 · Vergi No 9251260471
         ▼
-WIN Markets  (marka — geliştirici: WORLD INVESTMENT MARKETS LTD)
+WIN Markets  (marka — Vizyon MRKT'nin markası)
         │
         ├── Borsa Robotu  → https://borsarobotu.app/        → App Store id6760553279
         └── Altın Robotu  → https://www.altinrobotu.com/    → App Store id6767850256
