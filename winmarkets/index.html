@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WIN Markets — Financial Data Technology &amp; Market Intelligence</title>
+<meta name="description" content="WIN Markets — financial data technology, market intelligence and mobile apps. Products: Borsa Robotu and Altın Robotu. Turkey operations partner: Vizyon MRKT.">
+<meta name="author" content="WIN Markets / WORLD INVESTMENT MARKETS LTD">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--acc:#14B8A6;--acc-2:#5EEAD4;--bg:#06100E;--bg2:#0B1815;--surface:#0F211D;--card:#13282333;--card2:#122722;--border:#1F3A33;--text:#FFFFFF;--muted:#9DB5AE;--dim:#6B847C;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.bg-glow{position:fixed;top:-280px;left:50%;transform:translateX(-50%);width:1100px;height:640px;background:radial-gradient(ellipse,rgba(20,184,166,0.16),transparent 70%);z-index:0;pointer-events:none}
+header{position:sticky;top:0;z-index:50;background:rgba(6,16,14,0.8);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;color:#fff}
+.logo .mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--acc-2),var(--acc));display:grid;place-items:center;color:#04211C;font-weight:900;font-size:12px}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--acc-2)}
+section{position:relative;z-index:1}
+.hero{padding:96px 0 64px;text-align:center}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acc-2);background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.25);padding:7px 15px;border-radius:99px;margin-bottom:22px}
+h1{font-size:clamp(34px,5.4vw,60px);font-weight:900;line-height:1.04;letter-spacing:-2px;margin-bottom:16px}
+.grad{background:linear-gradient(135deg,var(--acc-2),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(16px,1.8vw,20px);color:var(--muted);max-width:620px;margin:0 auto}
+.sec{padding:72px 0}
+.sec.alt{background:var(--bg2)}
+.sec-head{margin-bottom:34px}
+.sec-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acc-2);margin-bottom:10px;display:block}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
+.sec p.body{color:var(--muted);font-size:16px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{background:var(--card2);border:1px solid var(--border);border-radius:18px;padding:28px;transition:.3s}
+.card:hover{border-color:var(--acc);transform:translateY(-4px)}
+.card .tag{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--acc-2);margin-bottom:12px;display:block}
+.card h3{font-size:19px;font-weight:800;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+.card .links{display:flex;flex-wrap:wrap;gap:10px}
+.card .links a{font-size:13px;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:9px;border:1px solid var(--border);color:var(--text)}
+.card .links a:hover{border-color:var(--acc);color:var(--acc-2)}
+.card .links a.primary{background:linear-gradient(135deg,var(--acc-2),var(--acc));border:none;color:#04211C}
+.partner{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px}
+.partner .tag{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--acc-2);margin-bottom:12px;display:block}
+.partner h3{font-size:19px;margin-bottom:14px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.info .row b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;font-weight:700}
+.info .row span{font-size:14.5px;font-weight:500;color:var(--muted)}
+.notice{background:rgba(20,184,166,0.06);border:1px solid rgba(20,184,166,0.2);border-radius:16px;padding:24px;color:var(--muted);font-size:15px}
+.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 0 30px;position:relative;z-index:1}
+.chain-line{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+.chain-line strong{color:var(--text)}
+.fgrid{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-bottom:26px}
+.fgrid .co b{font-size:15px}
+.fgrid .co p{color:var(--muted);font-size:13.5px;margin-top:8px;line-height:1.7}
+.flinks{display:flex;flex-direction:column;gap:10px}
+.flinks a{color:var(--muted);text-decoration:none;font-size:14px}
+.flinks a:hover{color:var(--acc-2)}
+.copy{border-top:1px solid var(--border);padding-top:20px;color:var(--dim);font-size:13px}
+@media(max-width:760px){.nav-links{display:none}.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="mark">WIN</span><span>WIN Markets</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#partner">Partner Network</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">WIN Markets</span>
+    <h1>Financial Data Technology<br>&amp; <span class="grad">Market Intelligence</span></h1>
+    <p class="lead">A technology brand building financial data systems, market-tracking tools and mobile applications.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec alt" id="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">About</span><h2>The WIN Markets brand</h2></div>
+    <p class="body">WIN Markets is a technology brand developing financial data technologies, market-tracking systems and mobile applications. Products are published under the WIN Markets brand and built by WORLD INVESTMENT MARKETS LTD (WIN Markets LTD).</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec" id="products">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Products</span><h2>Our products</h2></div>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Product</span>
+        <h3>Borsa Robotu</h3>
+        <p>Data and analytics platform for stock markets.</p>
+        <div class="links">
+          <a class="primary" href="https://borsarobotu.app/" target="_blank" rel="noopener">borsarobotu.app</a>
+          <a href="https://apps.apple.com/us/app/win-markets-borsa-robotu/id6760553279" target="_blank" rel="noopener">App Store</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag">Product</span>
+        <h3>Altın Robotu</h3>
+        <p>Data and tracking platform for gold markets.</p>
+        <div class="links">
+          <a class="primary" href="https://www.altinrobotu.com/" target="_blank" rel="noopener">altinrobotu.com</a>
+          <a href="https://apps.apple.com/gb/app/win-markets-alt%C4%B1n-robotu/id6767850256" target="_blank" rel="noopener">App Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER NETWORK -->
+<section class="sec alt" id="partner">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Partner Network</span><h2>Turkey Operations Partner</h2></div>
+    <div class="partner">
+      <span class="tag">Turkey Operations &amp; Marketing</span>
+      <h3>VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LTD. ŞTİ.</h3>
+      <div class="info">
+        <div class="row"><b>MERSİS</b><span>0925126047100001</span></div>
+        <div class="row"><b>Tax No</b><span>9251260471</span></div>
+        <div class="row"><b>Address</b><span>Maslak Mah. Maslak Meydan Sk. Beybi Giz Plaza A Blok No:1 İç Kapı No:55 Sarıyer / İstanbul</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="sec" id="compliance">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Compliance &amp; Disclaimer</span><h2>Disclaimer</h2></div>
+    <div class="notice">
+      WIN Markets does not provide investment advice, portfolio management or any licensed financial services. All products are data, analytics and informational software tools only. No content constitutes investment advice.
+    </div>
+  </div>
+</section>
+
+<!-- GIZLILIK / SARTLAR anchors -->
+<section class="sec alt" id="privacy">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Privacy</span><h2>Privacy Policy</h2></div>
+    <p class="body">Personal data is processed only to provide the service and for communication; it is not shared with third parties for marketing. Requests: <a href="mailto:info@winmarkets.dev" style="color:var(--acc-2)">info@winmarkets.dev</a>.</p>
+    <div class="sec-head" id="terms" style="margin-top:36px"><span class="sec-eyebrow">Terms</span><h2>Terms of Service</h2></div>
+    <p class="body">This site and the products are for informational purposes only and are subject to each product application's own terms of use and applicable law.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Contact</span><h2>Get in touch</h2></div>
+    <div class="info">
+      <div class="row"><b>Brand</b><span>WIN Markets — WORLD INVESTMENT MARKETS LTD</span></div>
+      <div class="row"><b>Email</b><span><a href="mailto:info@winmarkets.dev" style="color:var(--acc-2)">info@winmarkets.dev</a></span></div>
+      <div class="row"><b>Turkey Operations</b><span>Vizyon MRKT Yazılım ve Bilişim San. ve Tic. Ltd. Şti.</span></div>
+      <div class="row"><b>Phone</b><span>+90 (___) ___ __ __ <!-- TODO: real number --></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="chain-line">
+      <strong>Corporate Structure:</strong> VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LİMİTED ŞİRKETİ (parent company) → WIN Markets (brand) → Borsa Robotu &amp; Altın Robotu (products) → App Store applications.
+    </div>
+    <div class="fgrid">
+      <div class="co">
+        <b>WIN Markets — WORLD INVESTMENT MARKETS LTD</b>
+        <p>Turkey Operations Partner: VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LTD. ŞTİ.<br>
+        MERSİS: 0925126047100001 &nbsp;•&nbsp; Tax No: 9251260471<br>
+        Maslak Mah. Maslak Meydan Sk. Beybi Giz Plaza A Blok No:1 İç Kapı No:55 Sarıyer / İstanbul</p>
+      </div>
+      <nav class="flinks">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#contact">Contact</a>
+        <a href="#compliance">Legal Disclaimer</a>
+      </nav>
+    </div>
+    <div class="copy">© 2026 WIN Markets — WORLD INVESTMENT MARKETS LTD</div>
+  </div>
+</footer>
+
+</body>
+</html>

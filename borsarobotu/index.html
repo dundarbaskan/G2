@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borsa Robotu — Veri ve Analiz Platformu</title>
+<meta name="description" content="Borsa Robotu — Borsa İstanbul verilerini takip etmek için geliştirilmiş analiz ve izleme platformu. WIN Markets ekosistemi, Vizyon MRKT işletme/pazarlama.">
+<meta name="author" content="WIN Markets / WORLD INVESTMENT MARKETS LTD">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--acc:#00C853;--acc-2:#69F0AE;--bg:#07120B;--bg2:#0B1A11;--surface:#0F2418;--card:#10271A;--border:#1E3A2A;--text:#FFFFFF;--muted:#9DBDA9;--dim:#6B8676;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.bg-glow{position:fixed;top:-280px;left:50%;transform:translateX(-50%);width:1100px;height:640px;background:radial-gradient(ellipse,rgba(0,200,83,0.15),transparent 70%);z-index:0;pointer-events:none}
+header{position:sticky;top:0;z-index:50;background:rgba(7,18,11,0.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;color:#fff}
+.logo .mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--acc-2),var(--acc));display:grid;place-items:center;color:#04210F;font-weight:900;font-size:13px}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--acc-2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:11px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--acc-2),var(--acc));color:#04210F}
+.btn-ghost{background:var(--card);border:1px solid var(--border);color:var(--text)}
+section{position:relative;z-index:1}
+.hero{padding:96px 0 64px;text-align:center}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acc-2);background:rgba(0,200,83,0.1);border:1px solid rgba(0,200,83,0.25);padding:7px 15px;border-radius:99px;margin-bottom:22px}
+h1{font-size:clamp(34px,5.4vw,58px);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:16px}
+.grad{background:linear-gradient(135deg,var(--acc-2),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:640px;margin:0 auto 28px}
+.sec{padding:72px 0}
+.sec.alt{background:var(--bg2)}
+.sec-head{margin-bottom:34px}
+.sec-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--acc-2);margin-bottom:10px;display:block}
+h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
+.sec p.body{color:var(--muted);font-size:16px;max-width:760px}
+.sec p.body+p.body{margin-top:14px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.f{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.f .ic{font-size:22px;margin-bottom:10px}
+.f h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.f p{color:var(--muted);font-size:13.5px}
+.appband{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px;text-align:center}
+.appband p{color:var(--muted);margin:8px 0 20px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.info .row{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.info .row b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;font-weight:700}
+.info .row span{font-size:15px;font-weight:500}
+.notice{background:rgba(0,200,83,0.06);border:1px solid rgba(0,200,83,0.2);border-radius:16px;padding:24px;color:var(--muted);font-size:15px}
+.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 0 30px;position:relative;z-index:1}
+.chain-line{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+.chain-line strong{color:var(--text)}
+.fgrid{display:grid;grid-template-columns:2fr 1fr;gap:30px;margin-bottom:26px}
+.fgrid .co b{font-size:15px}
+.fgrid .co p{color:var(--muted);font-size:13.5px;margin-top:8px;line-height:1.7}
+.flinks{display:flex;flex-direction:column;gap:10px}
+.flinks a{color:var(--muted);text-decoration:none;font-size:14px}
+.flinks a:hover{color:var(--acc-2)}
+.copy{border-top:1px solid var(--border);padding-top:20px;color:var(--dim);font-size:13px}
+@media(max-width:760px){.nav-links{display:none}.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span class="mark">BR</span><span>Borsa Robotu</span></a>
+    <nav class="nav-links">
+      <a href="#ozellikler">Özellikler</a>
+      <a href="#uygulama">Uygulama</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">WIN Markets Ürünü</span>
+    <h1><span class="grad">Borsa Robotu</span></h1>
+    <p class="lead">Borsa İstanbul verilerini takip etmek için geliştirilmiş analiz ve izleme platformu.</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/us/app/win-markets-borsa-robotu/id6760553279" target="_blank" rel="noopener">App Store'dan İndir</a>
+  </div>
+</section>
+
+<!-- OZELLIKLER -->
+<section class="sec alt" id="ozellikler">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Özellikler</span><h2>Piyasa takip ve analiz araçları</h2></div>
+    <div class="feat">
+      <div class="f"><div class="ic">📊</div><h3>Hisse Takibi</h3><p>BIST hisselerini canlı izleyin.</p></div>
+      <div class="f"><div class="ic">📈</div><h3>Teknik Analiz</h3><p>RSI, MACD, Bollinger Bands göstergeleri.</p></div>
+      <div class="f"><div class="ic">🔔</div><h3>Alarm Sistemi</h3><p>Fiyat ve gösterge bazlı bildirimler.</p></div>
+      <div class="f"><div class="ic">💼</div><h3>Portföy Takibi</h3><p>Varlıklarınızı tek ekrandan yönetin.</p></div>
+      <div class="f"><div class="ic">📰</div><h3>Finans Haberleri</h3><p>Piyasayı etkileyen güncel haberler.</p></div>
+      <div class="f"><div class="ic">⚙️</div><h3>Göstergeler</h3><p>RSI · MACD · Bollinger Bands ve daha fazlası.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- UYGULAMA -->
+<section class="sec" id="uygulama">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Uygulama</span><h2>Uygulama ekran görselleri</h2></div>
+    <div class="appband">
+      <h2 style="font-size:22px">iOS uygulaması App Store'da yayında</h2>
+      <p>Ekran görüntüleri ve detaylı tanıtım için App Store sayfasını ziyaret edin.</p>
+      <a class="btn btn-primary" href="https://apps.apple.com/us/app/win-markets-borsa-robotu/id6760553279" target="_blank" rel="noopener">App Store'da Görüntüle</a>
+    </div>
+  </div>
+</section>
+
+<!-- HAKKIMIZDA -->
+<section class="sec alt" id="hakkimizda">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Hakkımızda</span><h2>WIN Markets ekosistemi</h2></div>
+    <p class="body">Borsa Robotu, WIN Markets ekosistemi içerisinde geliştirilen finansal veri ve analiz platformudur.</p>
+    <div class="info" style="margin-top:18px">
+      <div class="row"><b>Geliştirici</b><span>WIN Markets LTD (WORLD INVESTMENT MARKETS LTD)</span></div>
+      <div class="row"><b>Türkiye Operasyonları ve Pazarlama</b><span>Vizyon MRKT Yazılım ve Bilişim Sanayi ve Ticaret Ltd. Şti.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SORUMLULUK REDDI -->
+<section class="sec" id="yasal">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Sorumluluk Reddi</span><h2>Yasal uyarı</h2></div>
+    <div class="notice">
+      Bu uygulama yatırım danışmanlığı hizmeti sunmaz. Uygulamada yer alan veriler, göstergeler, analizler ve bildirimler yalnızca bilgilendirme amaçlıdır. Hiçbir içerik yatırım tavsiyesi niteliğinde değildir. Yatırım kararları kullanıcıların kendi sorumluluğundadır.
+    </div>
+  </div>
+</section>
+
+<!-- GIZLILIK / SARTLAR anchors -->
+<section class="sec alt" id="gizlilik">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Gizlilik / KVKK</span><h2>Gizlilik Politikası</h2></div>
+    <p class="body">Kişisel veriler yalnızca hizmetin sunulması ve iletişim amacıyla işlenir; üçüncü taraflarla pazarlama amacıyla paylaşılmaz. Detaylı politika için: <a href="https://borsarobotu.app/gizlilik" target="_blank" rel="noopener" style="color:var(--acc-2)">borsarobotu.app/gizlilik</a>.</p>
+    <div class="sec-head" id="sartlar" style="margin-top:36px"><span class="sec-eyebrow">Kullanım Şartları</span><h2>Kullanım Şartları</h2></div>
+    <p class="body">Uygulamanın kullanımı, <a href="https://borsarobotu.app/kosullar" target="_blank" rel="noopener" style="color:var(--acc-2)">borsarobotu.app/kosullar</a> adresindeki kullanım şartlarına tabidir.</p>
+  </div>
+</section>
+
+<!-- ILETISIM / SIRKET BILGILERI -->
+<section class="sec" id="iletisim">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-eyebrow">Şirket Bilgileri & İletişim</span><h2>İletişim</h2></div>
+    <div class="info">
+      <div class="row"><b>Geliştirici</b><span>WIN Markets LTD (WORLD INVESTMENT MARKETS LTD)</span></div>
+      <div class="row"><b>İşletme ve Pazarlama</b><span>VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LTD. ŞTİ.</span></div>
+      <div class="row"><b>Web</b><span><a href="https://borsarobotu.app/" target="_blank" rel="noopener" style="color:var(--acc-2)">borsarobotu.app</a></span></div>
+      <div class="row"><b>E-posta</b><span><a href="mailto:info@borsarobotu.app" style="color:var(--acc-2)">info@borsarobotu.app</a></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="chain-line">
+      <strong>Kurumsal Yapı:</strong> VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LİMİTED ŞİRKETİ (çatı şirket) → WIN Markets (marka) → Borsa Robotu &amp; Altın Robotu (ürünler) → App Store uygulamaları.
+    </div>
+    <div class="fgrid">
+      <div class="co">
+        <b>Borsa Robotu — WIN Markets ürünü</b>
+        <p>Geliştirici: WIN Markets LTD (WORLD INVESTMENT MARKETS LTD)<br>
+        İşletme ve Pazarlama: VİZYON MRKT YAZILIM VE BİLİŞİM SANAYİ VE TİCARET LTD. ŞTİ.<br>
+        MERSİS: 0925126047100001 &nbsp;•&nbsp; Vergi No: 9251260471</p>
+      </div>
+      <nav class="flinks">
+        <a href="#gizlilik">Gizlilik Politikası</a>
+        <a href="#sartlar">Kullanım Şartları</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="#yasal">Yasal Uyarı</a>
+      </nav>
+    </div>
+    <div class="copy">© 2026 Borsa Robotu — WIN Markets / WORLD INVESTMENT MARKETS LTD</div>
+  </div>
+</footer>
+
+</body>
+</html>
